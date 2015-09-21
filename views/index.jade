@@ -1,36 +1,40 @@
 extends layout
 
 block content
-  h1= title
   p Welcome to the Total Grading System (TGS) Calculator
   p Fill out the form below and submit to calculate the true difficulty of your latest sick-gnar proj for accurate spraying purposes
     
   div
-  form(method="post" action="/submitForm")
+  form(method="post" action="/")
     div
-      label Consensus V Grade
+      h2 Consensus V Grade
         input(type="text" name= "consensusVGrade" placeholder= "Consensus V Grade")
     div
-      label Your Hieght
-        input(type="text" name= "heightFeet" placeholder= "feet")
-        input(type="text" name= "heightInches" placeholder= "inches")
+      h2 Personal Data
+      div
+        label Your Height
+          input(type="text" name= "heightFeet" placeholder= "feet")
+          input(type="text" name= "heightInches" placeholder= "inches")
+      div
+        label Your Weight
+          input(type="text" name= "weight" placeholder= "pounds")
+      div
+        label Your Ape Index
+          input(type="text" name= "apeIndex" placeholder= "inches")
+      div
+        label Your Blood Alcohol Content
+          input(type="text" name= "bloodAlcohol" placeholder= "% BAC by volume")
+      div
+        label Your Age
+          input(type="text" name= "age" placeholder= "years")
     div
-      label Your Weight
-        input(type="text" name= "weight" placeholder= "pounds")
-    div
-      label Your Ape Index
-      input(type="text" name= "apeIndex" placeholder= "inches")
-    div
-      label Your Blood Alcohol Content
-      input(type="text" name= "bloodAlcohol" placeholder= "% BAC by volume")
-    div
-      label Your Age
-      input(type="text" name= "age" placeholder= "years")
-    div
+      h2 Environmental Data
       label Ambient Temperature
-      input(type="text" name= "temperature" placeholder= "degrees Farenhiet")
+        input(type="text" name= "temperature" placeholder= "degrees Farenhiet")
+      div
+        label Relative Humidity
+          input(type="text" name= "humidity" placeholder= "percent")
     div
-      label Relative Humidity
-      input(type="text" name= "humidity" placeholder= "percent")
-    div
-      input(type="submit" value="Tell me the truth")
+      button(type="submit" value="Tell me the truth") Tell me the Truth
+  h1 Your True Grade
+    h1= tgsGrade

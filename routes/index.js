@@ -6,10 +6,11 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'TGS Calculator' });
 });
 
-//=================== POST Form =====================//
-router.post('/submitForm', function(req, res) {
 
-	console.log("processing GET from '/'");
+//=================== POST Form =====================//
+router.post('/', function(req, res) {
+
+	console.log("processing POST from '/'");
 	console.log('req.body:');
 	console.log(req.body);
 	
@@ -28,7 +29,7 @@ router.post('/submitForm', function(req, res) {
 
 
 	//send TGS Grade as response
-	res.send(tgsGrade);
+	res.render('index', {title: "TGS Calculator", tgsGrade : tgsGrade});
 })
 
 module.exports = router;

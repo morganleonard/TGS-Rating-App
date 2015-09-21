@@ -1,8 +1,46 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #FFFFFF;
 }
 
 a {
   color: #00B7FF;
+}
+
+h1 {
+
+}
+
+label {
+	border: none;
+	padding: 1%;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	margin-left:10%;
+	margin-right:10%;
+	width: 40%;
+	text-align: left;
+}
+
+input {
+	/*border: 1px solid black;*/
+	padding: 1%;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	margin-left:30%;
+	margin-right:30%;
+	width: 80%;
+	text-align: left;
+}
+
+form {
+	border: 1px solid black;
+	padding: 1%;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	margin-left:30%;
+	margin-right:30%;
+	width: 40%;
+	text-align: left;
 }
