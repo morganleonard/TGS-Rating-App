@@ -6,34 +6,34 @@ block content
     
   div
   form(method="post" action="/")
-    div
+    div(class= "inputContent")
       h2 Consensus V Grade
         input(type="text" name= "consensusVGrade" placeholder= "Consensus V Grade")
-    div
+    div(class= "inputSection")
       h2 Personal Data
       div
-        label Your Height
-          input(type="text" name= "heightFeet" placeholder= "feet")
-          input(type="text" name= "heightInches" placeholder= "inches")
+        label(class= "formInputLabel") Your Height
+          input(class= "formInputBox" type="text" name= "heightFeet" placeholder= "feet")
+          input(class= "formInputBox" type="text" name= "heightInches" placeholder= "inches")
       div
-        label Your Weight
-          input(type="text" name= "weight" placeholder= "pounds")
+        label(class= "formInputLabel") Your Weight
+          input(class= "formInputBox" type="text" name= "weight" placeholder= "pounds")
       div
-        label Your Ape Index
-          input(type="text" name= "apeIndex" placeholder= "inches")
+        label(class= "formInputLabel") Your Ape Index
+          input(class= "formInputBox" type="text" name= "apeIndex" placeholder= "inches")
       div
-        label Your Blood Alcohol Content
-          input(type="text" name= "bloodAlcohol" placeholder= "% BAC by volume")
+        label(class= "formInputLabel") Your Blood Alcohol Content
+          input(class= "formInputBox" type="text" name= "bloodAlcohol" placeholder= "% BAC by volume")
       div
         label Your Age
-          input(type="text" name= "age" placeholder= "years")
-    div
+          input(class= "formInputBox" type="text" name= "age" placeholder= "years")
+    div(class= "inputGroup")
       h2 Environmental Data
       label Ambient Temperature
-        input(type="text" name= "temperature" placeholder= "degrees Farenhiet")
+        input(class= "formInputBox" type="text" name= "temperature" placeholder= "degrees Farenhiet")
       div
         label Relative Humidity
-          input(type="text" name= "humidity" placeholder= "percent")
+          input(class= "formInputBox" type="text" name= "humidity" placeholder= "percent")
     div
       button(type="submit" value="Tell me the truth") Tell me the Truth
   h1 Your True Grade
