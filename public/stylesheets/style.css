@@ -27,7 +27,7 @@ h1 {
 }
 
 h2 {
-
+	text-align: center;
 }
 
 img {
@@ -43,11 +43,6 @@ img {
 	margin: 0;
 }
 
-.formInputLabel {
-	margin: 10px 10px;
-	/*width: 100%;*/
-}
-
 .inputSection {
 	background-color: #FFFFFF;
 	color: #000000;
@@ -55,8 +50,18 @@ img {
 	width: 100%;
 	/*float: left;*/
 }
+.formInputLine {
+	margin: 0;
+	width: 100%;
+}
+
+.formInputLabel {
+	width: 200px;
+	display: inline-block;
+}
 
 .formInputBox {
+	display: inline-block;
 	margin-left: 20px;
 	margin: 5px 20px;
 }
