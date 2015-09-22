@@ -14,31 +14,31 @@ block content
     div(class= "inputSection")
       h2 Personal Data
       div(class= "formInputLine")
-        label(class= "formInputLabel") Your Height
+        label(class= "formInputLabel") Your Height:
         input(class= "formInputBox" type="text" name= "heightFeet" placeholder= "feet")
         input(class= "formInputBox" type="text" name= "heightInches" placeholder= "inches")
       div(class= "formInputLine")
-        label(class= "formInputLabel") Your Weight
+        label(class= "formInputLabel") Your Weight:
         input(class= "formInputBox" type="text" name= "weight" placeholder= "pounds")
       div(class= "formInputLine")
-        label(class= "formInputLabel") Your Ape Index
+        label(class= "formInputLabel") Your Ape Index:
         input(class= "formInputBox" type="text" name= "apeIndex" placeholder= "inches")
       div(class= "formInputLine")
-        label(class= "formInputLabel") Your Blood Alcohol Content
+        label(class= "formInputLabel") Your Blood Alcohol Content:
         input(class= "formInputBox" type="text" name= "bloodAlcohol" placeholder= "% BAC by volume")
       div(class= "formInputLine")
-        label(class= "formInputLabel") Your Age
+        label(class= "formInputLabel") Your Age:
         input(class= "formInputBox" type="text" name= "age" placeholder= "years")
     div(class= "inputSection")
       h2 Environmental Data
       div(class= "formInputLine")
-        label(class= "formInputLabel") Ambient Temperature
+        label(class= "formInputLabel") Ambient Temperature:
         input(class= "formInputBox" type="text" name= "temperature" placeholder= "degrees Farenhiet")
       div(class= "formInputLine")
-        label(class= "formInputLabel") Relative Humidity
+        label(class= "formInputLabel") Relative Humidity:
         input(class= "formInputBox" type="text" name= "humidity" placeholder= "percent")
     div
       button(type="submit" value="Tell me the truth") Tell me the Truth
   div(class= "resultSection group")
     h1 Your True Grade
-      h1= tgsGrade
+      h1(class= "tgsGrade")= tgsGrade

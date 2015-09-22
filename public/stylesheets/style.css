@@ -11,6 +11,7 @@ header {
 }
 
 body {
+	margin: 20px;
 	background-color: #000000;
 	color: #FFFFFF;
 
@@ -72,7 +73,14 @@ img {
 	border-style: inset;
 	width: 30%;
 	float: right;
+	margin: 50px;
+	text-align: center;
 
+}
+
+.tgsGrade {
+	color: #123456;
+	font-size: 4em;
 }
 
 /*============  Float Clearfix ===============*/
