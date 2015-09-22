@@ -1,14 +1,15 @@
 extends layout
 
 block content
+  
   p Welcome to the Total Grading System (TGS) Calculator
   p Fill out the form below and submit to calculate the true difficulty of your latest sick-gnar proj for accurate spraying purposes
     
-  div
-  form(method="post" action="/")
-    div(class= "inputContent")
+  
+  form(class= "group" method="post" action="/")
+    div(class= "inputSection group")
       h2 Consensus V Grade
-        input(type="text" name= "consensusVGrade" placeholder= "Consensus V Grade")
+        input(class= "formInputBox" type="text" name= "consensusVGrade" placeholder= "Consensus V Grade")
     div(class= "inputSection")
       h2 Personal Data
       div
@@ -25,16 +26,17 @@ block content
         label(class= "formInputLabel") Your Blood Alcohol Content
           input(class= "formInputBox" type="text" name= "bloodAlcohol" placeholder= "% BAC by volume")
       div
-        label Your Age
+        label(class= "formInputLabel") Your Age
           input(class= "formInputBox" type="text" name= "age" placeholder= "years")
-    div(class= "inputGroup")
+    div(class= "inputSection")
       h2 Environmental Data
-      label Ambient Temperature
+      label(class= "formInputLabel") Ambient Temperature
         input(class= "formInputBox" type="text" name= "temperature" placeholder= "degrees Farenhiet")
       div
-        label Relative Humidity
+        label(class= "formInputLabel") Relative Humidity
           input(class= "formInputBox" type="text" name= "humidity" placeholder= "percent")
     div
       button(type="submit" value="Tell me the truth") Tell me the Truth
-  h1 Your True Grade
-    h1= tgsGrade
+  div(class= "resultSection group")
+    h1 Your True Grade
+      h1= tgsGrade

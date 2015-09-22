@@ -3,7 +3,10 @@
 header {
 /*	background-color: #000000;
 	color: #FFFFFF;*/
+	width: 100%;
 	margin: 0px 20px;
+	float : left;
+	margin: 0;
 
 }
 
@@ -11,6 +14,12 @@ body {
 	background-color: #000000;
 	color: #FFFFFF;
 
+}
+
+form {
+	width: 50%;
+	margin: 0;
+	float: left;
 }
 
 h1 {
@@ -27,19 +36,45 @@ img {
 
 
 /*============  Main Styles ===============*/
-.inputContent {
-
+.logIn {
+	float: right;
+	width: 20%;
+	text-align: right;
+	margin: 0;
 }
 
 .formInputLabel {
-
+	margin: 10px 10px;
+	/*width: 100%;*/
 }
 
 .inputSection {
-
+	background-color: #FFFFFF;
+	color: #000000;
+	border-style: inset;
+	width: 100%;
+	/*float: left;*/
 }
 
 .formInputBox {
+	margin-left: 20px;
+	margin: 5px 20px;
+}
 
+.resultSection {
+	background-color: #FFFFFF;
+	color: #000000;
+	border-style: inset;
+	width: 30%;
+	float: right;
+
+}
+
+/*============  Float Clearfix ===============*/
+
+.group:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 

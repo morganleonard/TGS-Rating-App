@@ -3,8 +3,7 @@ html
   head
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
-  header
-    h1= title
-      span(class= logIn) log in
+  header(class= "group")= title
+      span(class= "logIn group") log in
   body
     block content
