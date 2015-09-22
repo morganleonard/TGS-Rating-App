@@ -5,6 +5,10 @@ header {
 	float : left;
 	margin: 0;
 	height: 100px;
+	background-image: url("../images/TeamGroupSend.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
 
 }
 
