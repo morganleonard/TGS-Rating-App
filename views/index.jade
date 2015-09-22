@@ -37,8 +37,9 @@ block content
       div(class= "formInputLine")
         label(class= "formInputLabel") Relative Humidity:
         input(class= "formInputBox" type="text" name= "humidity" placeholder= "percent")
-    div
-      button(type="submit" value="Tell me the truth") Tell me the Truth
+    div(class= "submitSection")
+      button(type="submit") Tell me the Truth
+      button(type="reset") Clear Form
   div(class= "resultSection group")
     h1 Your True Grade
       h1(class= "tgsGrade")= tgsGrade

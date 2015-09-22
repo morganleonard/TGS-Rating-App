@@ -1,12 +1,10 @@
 /*============ Base Styles ===============*/
 
 header {
-/*	background-color: #000000;
-	color: #FFFFFF;*/
 	width: 100%;
-	margin: 0px 20px;
 	float : left;
 	margin: 0;
+	height: 100px;
 
 }
 
@@ -19,7 +17,7 @@ body {
 
 form {
 	width: 50%;
-	margin: 0 0 50px 0;
+	margin: 10px 10px 50px 50px;
 	float: left;
 }
 
@@ -29,6 +27,10 @@ h1 {
 
 h2 {
 	text-align: center;
+}
+
+button {
+	margin: 20px 50px;
 }
 
 img {
@@ -73,13 +75,21 @@ img {
 	padding: 3px;
 }
 
+.submitSection {
+	background-color: #FFFFFF;
+	color: #000000;
+	border-style: inset;
+	width: 100%;
+	text-align: center;
+}
+
 .resultSection {
 	background-color: #FFFFFF;
 	color: #000000;
 	border-style: inset;
 	width: 30%;
 	float: right;
-	margin: 150px 50px 50px 50px;
+	margin: 150px 50px 50px 5px;
 	text-align: center;
 
 }
