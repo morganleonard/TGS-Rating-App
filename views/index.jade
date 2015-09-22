@@ -3,14 +3,14 @@ extends layout
 block content
   
   p Welcome to the Total Grading System (TGS) Calculator
-  p Fill out the form below and submit to calculate the true difficulty of your latest sick-gnar proj for accurate spraying purposes
-    
   
   form(class= "group" method="post" action="/")
+    p Fill out the form below and submit to calculate the true difficulty of your latest sick-gnar proj for accurate spraying purposes
     div(class= "inputSection group")
       h2 Consensus V Grade
-      div
-        input(class= "formInputBox" type="text" name= "consensusVGrade" placeholder= "Consensus V Grade")
+      div(class= "vGradeInput")
+        label V
+        input(class= "formInputBox" type="text" name= "consensusVGrade" placeholder= "#")
     div(class= "inputSection")
       h2 Personal Data
       div(class= "formInputLine")
