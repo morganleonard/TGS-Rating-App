@@ -25,6 +25,9 @@ block content
             label(class= "formInputLabel") Your Height:
             input(class= "formInputBox" type="text" name= "heightFeet" placeholder= "feet")
             input(class= "formInputBox" type="text" name= "heightInches" placeholder= "inches")
+        div(class= "submitSection")
+          button(type="submit") Tell me the Truth
+          button(type="reset") Clear Form
     div(id="fragment-2")
       form(class= "group" method="post" action="/")
         div(class= "inputSection group")
@@ -58,6 +61,9 @@ block content
           div(class= "formInputLine")
             label(class= "formInputLabel") Relative Humidity:
             input(class= "formInputBox" type="text" name= "humidity" placeholder= "percent")
+        div(class= "submitSection")
+          button(type="submit") Tell me the Truth
+          button(type="reset") Clear Form   	
     div(id="fragment-3")
       form(class= "group" method="post" action="/")
         div(class= "inputSection group")
