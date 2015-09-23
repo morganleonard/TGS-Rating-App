@@ -67,6 +67,14 @@ img {
 	margin-right: 10px;
 }
 
+.inputForm {
+	width: 50%;
+	margin: 10px 10px 50px 50px;
+	float: left;
+	background-color: #031634;
+	color: #474C54;
+}
+
 .inputSection {
 /*	background-color: #181E3A;
 	color: #000000;*/
