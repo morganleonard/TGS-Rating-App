@@ -1,22 +1,10 @@
 /*============ Base Styles ===============*/
 
-header {
-	width: 100%;
-	float : left;
-	margin: 0;
-	height: 100px;
-	background-image: url("../images/TeamGroupSend.png");
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: contain;
-
-}
-
 body {
 	font-family: 'Allerta Stencil', sans-serif;
-	margin: 20px;
-	background-color: #000000;
-	color: #FFFFFF;
+	margin: 0;
+	background-color: #FFFFFF;
+	color: #000000;
 
 }
 
@@ -24,6 +12,8 @@ form {
 	width: 50%;
 	margin: 10px 10px 50px 50px;
 	float: left;
+	background-color: #031634;
+	color: #474C54;
 }
 
 h1 {
@@ -33,6 +23,10 @@ h1 {
 h2 {
 	font-weight: normal;
 	text-align: center;
+}
+
+p {
+	margin: 10px;
 }
 
 button {
@@ -45,16 +39,37 @@ img {
 
 
 /*============  Main Styles ===============*/
+
+.mainHeader {
+
+	background-color: #000000;
+	color: #FFFFFF;
+	width: 100%;
+	/*padding: 10px;*/
+	/*float : left;*/
+	margin: 0;
+	height: 100px;
+	background-image: url("../images/TeamGroupSend.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+
+}
+
+.headerTitle {
+	margin-left: 10px;
+}
+
 .logIn {
 	float: right;
 	width: 20%;
 	text-align: right;
-	margin: 0;
+	margin-right: 10px;
 }
 
 .inputSection {
-	background-color: #FFFFFF;
-	color: #000000;
+/*	background-color: #181E3A;
+	color: #000000;*/
 	border-style: inset;
 	width: 100%;
 	/*float: left;*/
@@ -71,27 +86,31 @@ img {
 }
 
 .formInputLabel {
-	width: 200px;
+	width: 250px;
 	display: inline-block;
+	margin-left: 5px;
 }
 
 .formInputBox {
+	width: 120px;
 	display: inline-block;
 	margin: 5px;
 	padding: 3px;
+	background-color: #FFFFFF;
+	color: #000000;
 }
 
 .submitSection {
-	background-color: #FFFFFF;
-	color: #000000;
+/*	background-color: #FFFFFF;
+	color: #000000;*/
 	border-style: inset;
 	width: 100%;
 	text-align: center;
 }
 
 .resultSection {
-	background-color: #FFFFFF;
-	color: #000000;
+	background-color: #031634;
+	color: #474C54;
 	border-style: inset;
 	width: 30%;
 	float: right;
