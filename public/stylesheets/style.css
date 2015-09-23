@@ -9,11 +9,13 @@ body {
 }
 
 form {
-	width: 50%;
-	margin: 10px 10px 50px 50px;
-	float: left;
-	background-color: #031634;
-	color: #474C54;
+	font-family: 'Allerta Stencil', sans-serif;
+	/*width: 50%;*/
+	margin: 10px 10px 10px 10px;
+	/*float: left;*/
+	background: #000000 url("images/ui-bg_loop_25_000000_21x21.png") 50% 50% repeat;
+	/*background-color: #031634;*/
+/*	color: #FFFFFF;*/
 }
 
 h1 {
@@ -117,8 +119,9 @@ img {
 }
 
 .resultSection {
+	background: #000000 url("images/ui-bg_loop_25_000000_21x21.png") 50% 50% repeat;
 	background-color: #031634;
-	color: #474C54;
+	color: #FFFFFF;
 	border-style: inset;
 	width: 30%;
 	float: right;
@@ -128,7 +131,7 @@ img {
 }
 
 .tgsGrade {
-	color: #123456;
+	color: #0972A5;
 	font-size: 4em;
 }
 
