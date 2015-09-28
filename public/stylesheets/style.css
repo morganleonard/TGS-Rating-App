@@ -124,9 +124,11 @@ img {
 	color: #FFFFFF;
 	border-style: inset;
 	width: 30%;
-	float: right;
-	margin: 150px 50px 50px 5px;
+/*	float: right;*/
+	margin: 5% 10% 50px 60%;
+
 	text-align: center;
+	position: fixed;
 
 }
 
