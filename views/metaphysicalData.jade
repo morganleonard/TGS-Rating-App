@@ -2,7 +2,7 @@ div(class= "inputSection")
   h2 Metaphysical Data
   div(class= "formInputLine")
     label(class= "formInputLabel") Your Blood Alcohol Content:
-    input(class= "formInputBox" type="text" name= "bloodAlcohol" placeholder= "% BAC by volume")
+    input(class= "formInputBox" type="number" name= "bloodAlcohol" placeholder= "% BAC by volume")
   div(class= "formInputLine")
     label(class= "formInputLabel") Last Meal:
     select(class= "formInputBox" name= "lastMeal")
@@ -11,20 +11,19 @@ div(class= "inputSection")
       option(value= "italian") Italian
       option(value= "thai") Thai
       option(value= "indian") Indian
+      option(value= "salad") Salad
+      option(value= "pizza") Pizza
       option(value= "burger") Burger
+      option(value= "kale") Organic Fair Trade Sustainable Kale
       option(value= "beer") Beer
+      option(value= "whiskey") Whiskey
       option(value= "cornDog") Corn Dog
+      option(value= "pepperoni") Pepperoni
       option(value= "cigarette") Cigarette
       option(value= "other") Other
   div(class= "formInputLine")
-    label(class= "formInputLabel") Amount of Sun in Eyes:
-    input(class= "formInputBox" type="text" name= "sunInEyes" placeholder= "% insolation")
-  div(class= "formInputLine")
-    label(class= "formInputLabel") Average Headwind Speed:
-    input(class= "formInputBox" type="text" name= "headwind" placeholder= "mph")
-  div(class= "formInputLine")
-    label(class= "formInputLabel") Your Blood Alcohol Content:
-    input(class= "formInputBox" type="text" name= "bloodAlcohol" placeholder= "% BAC by volume")
+    label(class= "formInputLabel") Cups of Coffee Consumed:
+    input(class= "formInputBox" type="number" name= "cupsOfCoffee" placeholder= "# cups")
   div(class= "formInputLine")
     label(class= "formInputLabel") Climbing Area:
     select(class= "formInputBox" name= "climbingArea")
@@ -35,6 +34,22 @@ div(class= "inputSection")
       option(value= "leavenworth") Leavenworth
       option(value= "squamish") Squamish
       option(value= "carver") Carver
+      option(value= "littleCottonwood") Little Cottonwood
+      option(value= "moesValley") Moe's Valley
       option(value= "fontainebleau") Fontainebleau
+      option(value= "myLocalArea") My Local Area      
       option(value= "anywhereInColorado") Anywhere in Colorado
       option(value= "other") Other
+  div(class= "formInputLine")
+    label(class= "formInputLabel") Mental State:
+    select(class= "formInputBox" name= "mentalState")
+      option(value= "other") -choose- 
+      option(value= "distracted") Distracted
+      option(value= "focused") Focused
+      option(value= "spaceCadet") Space Cadet
+      option(value= "psyched") Psyched!!!
+      option(value= "hungover") Hungover
+      option(value= "other") Other
+  div(class= "formInputLine")
+    label(class= "formInputLabel") Number of Hot Climbers Watching:
+    input(class= "formInputBox" type="number" name= "hotClimbersWatching" placeholder= "#")

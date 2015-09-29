@@ -2,7 +2,21 @@ div(class= "inputSection")
   h2 Environmental Data
   div(class= "formInputLine")
     label(class= "formInputLabel") Ambient Temperature:
-    input(class= "formInputBox" type="text" name= "temperature" placeholder= "degrees Farenhiet")
+    input(class= "formInputBox" type="number" name= "temperature" placeholder= "degrees Farenhiet")
   div(class= "formInputLine")
     label(class= "formInputLabel") Relative Humidity:
-    input(class= "formInputBox" type="text" name= "humidity" placeholder= "percent")
+    input(class= "formInputBox" type="number" name= "humidity" placeholder= "percent")
+  div(class= "formInputLine")
+    label(class= "formInputLabel") Season:
+    select(class= "formInputBox" name= "season")
+      option(value= "other") -choose- 
+      option(value= "summer") Summer
+      option(value= "fall") Fall
+      option(value= "winter") Winter
+      option(value= "spring") Spring
+  div(class= "formInputLine")
+    label(class= "formInputLabel") Average Headwind:
+    input(class= "formInputBox" type="number" name= "headwind" placeholder= "mph")
+  div(class= "formInputLine")
+    label(class= "formInputLabel") Amount of Sun in Eyes:
+    input(class= "formInputBox" type="number" name= "sunInEyes" placeholder= "% insolation")
