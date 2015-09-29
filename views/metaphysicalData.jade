@@ -6,6 +6,7 @@ div(class= "inputSection")
   div(class= "formInputLine")
     label(class= "formInputLabel") Last Meal:
     select(class= "formInputBox" name= "lastMeal")
+      option(value= "other") -choose-
       option(value= "mexican") Mexican
       option(value= "italian") Italian
       option(value= "thai") Thai
@@ -14,7 +15,7 @@ div(class= "inputSection")
       option(value= "beer") Beer
       option(value= "cornDog") Corn Dog
       option(value= "cigarette") Cigarette
-    //- input(class= "formInputBox" type="text" name= "lastMeal" placeholder= "type of last meal")
+      option(value= "other") Other
   div(class= "formInputLine")
     label(class= "formInputLabel") Amount of Sun in Eyes:
     input(class= "formInputBox" type="text" name= "sunInEyes" placeholder= "% insolation")
@@ -24,3 +25,16 @@ div(class= "inputSection")
   div(class= "formInputLine")
     label(class= "formInputLabel") Your Blood Alcohol Content:
     input(class= "formInputBox" type="text" name= "bloodAlcohol" placeholder= "% BAC by volume")
+  div(class= "formInputLine")
+    label(class= "formInputLabel") Climbing Area:
+    select(class= "formInputBox" name= "climbingArea")
+      option(value= "other") -choose- 
+      option(value= "hueco") Hueco
+      option(value= "bishop") Bishop
+      option(value= "joesValley") Joe's Valley
+      option(value= "leavenworth") Leavenworth
+      option(value= "squamish") Squamish
+      option(value= "carver") Carver
+      option(value= "fontainebleau") Fontainebleau
+      option(value= "anywhereInColorado") Anywhere in Colorado
+      option(value= "other") Other
