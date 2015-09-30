@@ -16,13 +16,19 @@ block content
         include consensusGrade.jade
         include personalData.jade
         include submitSection.jade
+        //- div(class= "submitSection")
+        //-   button(id= "simpleSubmitButton" type="button") Tell me the Truth
+        //-   button(type="reset") Clear Form
 
     div(id="fragment-2")
       form(class= "group" method="post" action="/")
         include consensusGrade.jade
         include personalData.jade
         include environmentalData.jade
-        include submitSection.jade
+        include submitSection.jade        
+        //- div(class= "submitSection")
+        //-   button(id= "standardSubmitButton" type="button") Tell me the Truth
+        //-   button(type="reset") Clear Form        include submitSection.jade
 
     div(id="fragment-3")
       form(class= "group" method="post" action="/")
@@ -31,6 +37,9 @@ block content
         include environmentalData.jade
         include metaphysicalData.jade
         include submitSection.jade
+        //- div(class= "submitSection")
+        //-   button(id= "superSubmitButton" type="button") Tell me the Truth
+        //-   button(type="reset") Clear Form
 
   div(class= "resultSection group")
     h1 Your True Grade
