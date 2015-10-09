@@ -73,9 +73,9 @@ img {
 }
 
 .inputForm {
-	width: 50%;
-	margin: 110px 10px 50px 50px;
-	float: left;
+	width: 60%;
+	margin: 110px 20% 50px 20%;
+/*	float: left;*/
 	background-color: #031634;
 	color: #474C54;
 }
