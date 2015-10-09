@@ -6,13 +6,16 @@ $(document).ready( function () {
 	//enable jQuery UI tabs
 	$("#tabs").tabs();
 
+	//set results window to be closed on page load
+	$("#resultsModal").dialog({ autoOpen: false });
+
 	//submit form and pop up lightbox when form submit button is hit
-	//var submitButton = document.getElementById('submitButton');
 	$('#submitButton').click(function () {
-		//code to launch lightbox
-		//....
+
 		console.log("In submitButton click handler");
 
+		//open modal with results section
+		$("#resultsModal").dialog("open");
 
 	})
 
