@@ -12,7 +12,7 @@ block content
         a(href="#fragment-3") Super Spray
         
     div(id="fragment-1")
-      form(class= "group" method="post" action="/")
+      form(id= "simpleForm" class= "group" method="post" action="/")
         include consensusGrade.jade
         include personalData.jade
         include submitSection.jade
@@ -21,7 +21,7 @@ block content
         //-   button(type="reset") Clear Form
 
     div(id="fragment-2")
-      form(class= "group" method="post" action="/")
+      form(id= "standardForm" class= "group" method="post" action="/")
         include consensusGrade.jade
         include personalData.jade
         include environmentalData.jade
@@ -31,7 +31,7 @@ block content
         //-   button(type="reset") Clear Form        include submitSection.jade
 
     div(id="fragment-3")
-      form(class= "group" method="post" action="/")
+      form(id= "superForm" class= "group" method="post" action="/")
         include consensusGrade.jade
         include personalData.jade
         include environmentalData.jade

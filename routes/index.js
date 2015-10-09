@@ -29,6 +29,7 @@ router.post('/', function(req, res) {
 
 
 	//send TGS Grade as response
+	res.send({tgsGrade:tgsGrade});
 	// res.render('index', {title: "TGS Calculator", tgsGrade : tgsGrade});
 })
 
