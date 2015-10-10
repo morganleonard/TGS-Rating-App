@@ -25,13 +25,14 @@ $(document).ready( function () {
 		//send data via ajax to server
 		$.ajax({
 			type: "POST",
- 			//url: url,
  			data: formData,
-  			//success: success,
-  			//dataType: dataType
 		}).done(function(data){
 				console.log('data returned from server');
 				console.log(data);
+
+				//update value of tgsGrade in DOM
+				$("#tgsGrade").html(data.tgsGrade);
+				
 				//open modal
 				$("#resultsModal").dialog("open");
 			});
