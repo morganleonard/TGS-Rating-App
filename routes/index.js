@@ -15,47 +15,45 @@ router.post('/', function(req, res) {
 	console.log(req.body);
 	
 	//get input values from form and capture in variables
-	// var parsedRequest = JSON.parse(req.body);
-	// console.log("parsedRequest");
-	// console.log(parsedRequest);
 
-	var consensusVGrade = req.body.consensusVGrade,
-		heightFeet = req.body.heightFeet,
-		heightInches = req.body.heightInches,
-		weight = req.body.weight,
-		apeIndex = req.body.apeIndex,
-		age = req.body.age,
-		temperature = req.body.temperature,
-		humidity = req.body.humidity,
-		season = req.body.season,
-		headwind = req.body.headwind,
-		sunInEyes = req.body.sunInEyes,
-		bloodAlcohol = req.body.bloodAlcohol,
-		lastMeal = req.body.lastMeal,
-		cupsOfCoffee = req.body.cupsOfCoffee,		
-		climbingArea = req.body.climbingArea,
-		mentalState = req.body.mentalState,
-		hotClimbersWatching = req.body.hotClimbersWatching,		
-		tgsGrade = 0;
+	// var consensusVGrade = req.body.consensusVGrade,
+	// 	heightFeet = req.body.heightFeet,
+	// 	heightInches = req.body.heightInches,
+	// 	weight = req.body.weight,
+	// 	apeIndex = req.body.apeIndex,
+	// 	age = req.body.age,
+	// 	temperature = req.body.temperature,
+	// 	humidity = req.body.humidity,
+	// 	season = req.body.season,
+	// 	headwind = req.body.headwind,
+	// 	sunInEyes = req.body.sunInEyes,
+	// 	bloodAlcohol = req.body.bloodAlcohol,
+	// 	lastMeal = req.body.lastMeal,
+	// 	cupsOfCoffee = req.body.cupsOfCoffee,		
+	// 	climbingArea = req.body.climbingArea,
+	// 	mentalState = req.body.mentalState,
+	// 	hotClimbersWatching = req.body.hotClimbersWatching,		
+	// 	tgsGrade = 0;
 
-		// var consensusVGrade = parseFloat(req.body.consensusVGrade),
-		// heightFeet = parseFloat(req.body.heightFeet),
-		// heightInches = parseFloat(req.body.heightInches),
-		// weight = parseFloat(req.body.weight),
-		// apeIndex = parseFloat(req.body.apeIndex),
-		// age = parseFloat(req.body.age),
-		// temperature = parseFloat(req.body.temperature),
-		// humidity = parseFloat(req.body.humidity),
-		// season = req.body.season,
-		// headwind = parseFloat(req.body.headwind),
-		// sunInEyes = parseFloat(req.body.sunInEyes),
-		// bloodAlcohol = parseFloat(req.body.bloodAlcohol),
-		// lastMeal = req.body.lastMeal,
-		// cupsOfCoffee = parseFloat(req.body.cupsOfCoffee),		
-		// climbingArea = req.body.climbingArea,
-		// mentalState = req.body.mentalState,
-		// hotClimbersWatching = parseFloat(req.body.hotClimbersWatching),		
-		// tgsGrade = 0;
+	//initialize variables to input from submitted form if it exists, 0 otherwise
+	var consensusVGrade = req.body.consensusVGrade ? req.body.consensusVGrade : '';
+	var heightFeet = req.body.heightFeet ? req.body.heightFeet : '';
+	var heightInches = req.body.heightInches ? req.body.heightInches : '';
+	var weight = req.body.weight ? req.body.weight : '';
+	var apeIndex = req.body.apeIndex ? req.body.apeIndex : '';
+	var age = req.body.age ? req.body.age : '';
+	var temperature = req.body.temperature ? req.body.temperature : '';
+	var humidity = req.body.humidity ? req.body.humidity : '';
+	var season = req.body.season ? req.body.season : '';
+	var headwind = req.body.headwind ? req.body.headwind : '';
+	var sunInEyes = req.body.sunInEyes ? req.body.sunInEyes : '';
+	var bloodAlcohol = req.body.bloodAlcohol ? req.body.bloodAlcohol : '';
+	var lastMeal = req.body.lastMeal ? req.body.lastMeal : '';
+	var cupsOfCoffee = req.body.cupsOfCoffee ? req.body.cupsOfCoffee : '';
+	var climbingArea = req.body.climbingArea ? req.body.climbingArea : '';
+	var mentalState = req.body.mentalState ? req.body.mentalState : '';
+	var hotClimbersWatching = req.body.hotClimbersWatching ? req.body.hotClimbersWatching : '';
+	var tgsGrade = 0;
 
 	console.log('calculating points...')
 
@@ -64,7 +62,7 @@ router.post('/', function(req, res) {
 		heightTotal;
 	if (heightFeet && heightInches !== '') {
 		heightTotal = (parseFloat(heightFeet) * 12) + parseFloat(heightInches);
-		heightPoints = 68 - heightTotal;
+		heightPoints = (68 - heightTotal) / 5;
 	}	
 	console.log("heightPoints:");
 	console.log(heightPoints);
@@ -72,7 +70,7 @@ router.post('/', function(req, res) {
 	//calculate weight points
 	var weightPoints = 0;
 	if (weight !== '') {
-		weightPoints = weight - 160;
+		weightPoints = (weight - 160) / 20;
 	}
 	console.log("weightPoints:");
 	console.log(weightPoints);
@@ -88,7 +86,7 @@ router.post('/', function(req, res) {
 	//calculate age points
 	var agePoints = 0;
 	if (age !== '') {
-		agePoints = age - 30;
+		agePoints = (age - 30) / 10;
 	}
 	console.log("agePoints:");
 	console.log(agePoints);
