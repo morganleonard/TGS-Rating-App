@@ -15,10 +15,15 @@ router.post('/', function(req, res) {
 	console.log(req.body);
 	
 	//get input values from form and capture in variables
-	var consensusVGrade = resq.body.consensusVGrade,
+	// var parsedRequest = JSON.parse(req.body);
+	// console.log("parsedRequest");
+	// console.log(parsedRequest);
+
+	var consensusVGrade = req.body.consensusVGrade,
 		heightFeet = req.body.heightFeet,
 		heightInches = req.body.heightInches,
 		weight = req.body.weight,
+		apeIndex = req.body.apeIndex,
 		age = req.body.age,
 		temperature = req.body.temperature,
 		humidity = req.body.humidity,
@@ -31,10 +36,28 @@ router.post('/', function(req, res) {
 		climbingArea = req.body.climbingArea,
 		mentalState = req.body.mentalState,
 		hotClimbersWatching = req.body.hotClimbersWatching,		
-		tgsGrade = consensusVGrade;
-		tgsPoints = 0;
+		tgsGrade = 0;
 
-	//calculate TGS Grade
+		// var consensusVGrade = parseFloat(req.body.consensusVGrade),
+		// heightFeet = parseFloat(req.body.heightFeet),
+		// heightInches = parseFloat(req.body.heightInches),
+		// weight = parseFloat(req.body.weight),
+		// apeIndex = parseFloat(req.body.apeIndex),
+		// age = parseFloat(req.body.age),
+		// temperature = parseFloat(req.body.temperature),
+		// humidity = parseFloat(req.body.humidity),
+		// season = req.body.season,
+		// headwind = parseFloat(req.body.headwind),
+		// sunInEyes = parseFloat(req.body.sunInEyes),
+		// bloodAlcohol = parseFloat(req.body.bloodAlcohol),
+		// lastMeal = req.body.lastMeal,
+		// cupsOfCoffee = parseFloat(req.body.cupsOfCoffee),		
+		// climbingArea = req.body.climbingArea,
+		// mentalState = req.body.mentalState,
+		// hotClimbersWatching = parseFloat(req.body.hotClimbersWatching),		
+		// tgsGrade = 0;
+
+	console.log('calculating points')
 
 	//calculate height points
 	var heightPoints,
@@ -48,6 +71,11 @@ router.post('/', function(req, res) {
 	var weightPoints = weight - 160;
 	console.log("weightPoints:");
 	console.log(weightPoints);
+
+	//calculate apeIndex points
+	var apeIndexPoints = apeIndex;
+	console.log("apeIndexPoints:");
+	console.log(apeIndexPoints);
 
 	//calculate age points
 	var agePoints = age -30;
@@ -66,16 +94,16 @@ router.post('/', function(req, res) {
 
 	//calculate season points
 	var seasonPoints = 0;
-	if season === "Summer" {
+	if (season === "Summer") {
 		seasonPoints = 1;
 	}
-	if season === "Fall" {
+	if (season === "Fall") {
 		seasonPoints = -1;
 	}
-	if season === "Spring" {
+	if (season === "Spring") {
 		seasonPoints = 0;
 	}
-	if season === "Winter" {
+	if (season === "Winter") {
 		seasonPoints = -0.5;
 	}
 	console.log("seasonPoints:");
@@ -95,6 +123,50 @@ router.post('/', function(req, res) {
 	var bloodAlcoholPoints = (bloodAlcohol - 0.05)*50;
 	console.log("bloodAlcoholPoints:");
 	console.log(bloodAlcoholPoints);
+	
+	//calculate lastMeal points
+	var lastMealPoints = 0;
+	if (lastMeal === "mexican") {
+		lastMealPoints = 1;
+	}
+	if (lastMeal === "italian") {
+		lastMealPoints = 0;
+	}
+	if (lastMeal === "thai") {
+		lastMealPoints = -0.5;
+	}
+	if (lastMeal === "indian") {
+		lastMealPoints = -0.5;
+	}
+	if (lastMeal === "salad") {
+		lastMealPoints = -1;
+	}
+	if (lastMeal === "pizza") {
+		lastMealPoints = 0;
+	}
+	if (lastMeal === "burger") {
+		lastMealPoints = 0;
+	}
+	if (lastMeal === "kale") {
+		lastMealPoints = -2;
+	}
+	if (lastMeal === "beer") {
+		lastMealPoints = 0.5;
+	}
+	if (lastMeal === "whiskey") {
+		lastMealPoints = 1;
+	}
+	if (lastMeal === "cornDog") {
+		lastMealPoints = 0.5;
+	}
+	if (lastMeal === "pepperoni") {
+		lastMealPoints = 0;
+	}
+	if (lastMeal === "cigarette") {
+		lastMealPoints = -1;
+	}
+	console.log("lastMealPoints:");
+	console.log(lastMealPoints);
 
 	//calculate cupsOfCoffee points
 	var cupsOfCoffeePoints = cupsOfCoffee - 1;
@@ -103,58 +175,76 @@ router.post('/', function(req, res) {
 
 	//calculate climbingArea points
 	var climbingAreaPoints = 0;
-	if climbingArea === "hueco" {
+	if (climbingArea === "hueco") {
 		climbingAreaPoints = 0;
 	}
-	if climbingArea === "bishop" {
+	if (climbingArea === "bishop") {
 		climbingAreaPoints = -1;
 	}
-	if climbingArea === "joesvalley" {
+	if (climbingArea === "joesvalley") {
 		climbingAreaPoints = -2;
 	}
-	if climbingArea === "leavenworth" {
+	if (climbingArea === "leavenworth") {
 		climbingAreaPoints = 0.5;
 	}
-	if climbingArea === "squamish" {
+	if (climbingArea === "squamish") {
 		climbingAreaPoints = 1;
 	}
-	if climbingArea === "carver" {
+	if (climbingArea === "carver") {
 		climbingAreaPoints = 0;
 	}
-	if climbingArea === "littleCottonwood" {
+	if (climbingArea === "littleCottonwood") {
 		climbingAreaPoints = 1.5;
 	}
-	if climbingArea === "moesValley" {
+	if (climbingArea === "moesValley") {
 		climbingAreaPoints = -2;
 	}
-	if climbingArea === "fontainebleau" {
+	if (climbingArea === "fontainebleau") {
 		climbingAreaPoints = 1;
 	}
-	if climbingArea === "myLocalArea" {
+	if (climbingArea === "myLocalArea") {
 		climbingAreaPoints = -1;
 	}
-	if climbingArea === "anywhereInColorado" {
+	if (climbingArea === "anywhereInColorado") {
 		climbingAreaPoints = -1.5;
 	}
-	if climbingArea === "other" {
+	if (climbingArea === "other") {
 		climbingAreaPoints = 0;
 	}			
 	console.log("climbingAreaPoints:");
 	console.log(climbingAreaPoints);
 
 	//calculate mentalState points
-	var mentalStatePoints
-
+	var mentalStatePoints = 0;
+	if (mentalState === "distracted") {
+		mentalStatePoints = 0.5;
+	}
+	if (mentalState === "focused") {
+		mentalStatePoints = -0.5;
+	}
+	if (mentalState === "spaceCadet") {
+		mentalStatePoints = 0;
+	}
+	if (mentalState === "psyched") {
+		mentalStatePoints = -0.5;
+	}
+	if (mentalState === "hungover") {
+		mentalStatePoints = 1;
+	}
 	console.log("mentalStatePoints:");
 	console.log(mentalStatePoints);
 
 	//calculate hotClimbersWatching points
-	var hotClimbersWatchingPoints
-
+	var hotClimbersWatchingPoints = hotClimbersWatching / 2;
 	console.log("hotClimbersWatchingPoints:");
 	console.log(hotClimbersWatchingPoints);
 
-
+	//calculate TGS Grade
+	tgsGrade = consensusVGrade + heightPoints + weightPoints 
+				+ apeIndexPoints + agePoints + temperaturePoints 
+				+ humidityPoints + seasonPoints + headwindPoints
+				+ sunInEyesPoints + bloodAlcoholPoints + lastMealPoints 
+				+ cupsOfCoffeePoints + climbingAreaPoints + mentalStatePoints;
 
 
 	//send TGS Grade as response
