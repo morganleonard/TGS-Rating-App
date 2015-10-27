@@ -57,38 +57,55 @@ router.post('/', function(req, res) {
 		// hotClimbersWatching = parseFloat(req.body.hotClimbersWatching),		
 		// tgsGrade = 0;
 
-	console.log('calculating points')
+	console.log('calculating points...')
 
 	//calculate height points
-	var heightPoints,
+	var heightPoints = 0,
 		heightTotal;
-	heightTotal = (heightFeet * 12) + heightInches;
-	heightPoints = 68 - heightTotal;
+	if (heightFeet && heightInches !== '') {
+		heightTotal = (parseFloat(heightFeet) * 12) + parseFloat(heightInches);
+		heightPoints = 68 - heightTotal;
+	}	
 	console.log("heightPoints:");
 	console.log(heightPoints);
 
 	//calculate weight points
-	var weightPoints = weight - 160;
+	var weightPoints = 0;
+	if (weight !== '') {
+		weightPoints = weight - 160;
+	}
 	console.log("weightPoints:");
 	console.log(weightPoints);
 
 	//calculate apeIndex points
-	var apeIndexPoints = apeIndex;
+	var apeIndexPoints = 0;
+	if (apeIndex !== '') {
+		apeIndexPoints = 0 - apeIndex;
+	}
 	console.log("apeIndexPoints:");
 	console.log(apeIndexPoints);
 
 	//calculate age points
-	var agePoints = age -30;
+	var agePoints = 0;
+	if (age !== '') {
+		agePoints = age - 30;
+	}
 	console.log("agePoints:");
 	console.log(agePoints);
 	
 	//calculate temperature points
-	var temperaturePoints = ((temperature - 45)/20);
+	var temperaturePoints = 0;
+	if (temperature !== '') {
+		temperaturePoints = (temperature - 45)/20;
+	}
 	console.log("temperaturePoints:");
 	console.log(temperaturePoints);
 
 	//calculate humidity points
-	var humidityPoints = humidity / 20;
+	var humidityPoints = 0;
+	if (humidity !== '') {
+		var humidityPoints = humidity / 20;
+	}
 	console.log("humidityPoints:");
 	console.log(humidityPoints);
 
@@ -110,17 +127,26 @@ router.post('/', function(req, res) {
 	console.log(seasonPoints);
 
 	//calculate headwind points
-	var headwindPoints = headwind / 30;
+	var headwindPoints = 0;
+	if (headwind !== '') {
+		headwindPoints = headwind / 30;
+	}
 	console.log("headwindPoints:");
 	console.log(headwindPoints);
 
 	//calculate sunInEyes points
-	var sunInEyesPoints = sunInEyes / 30;
+	var sunInEyesPoints = 0;
+	if (sunInEyes !== '') {
+		sunInEyesPoints = sunInEyes / 30;
+	}
 	console.log("sunInEyesPoints:");
 	console.log(sunInEyesPoints);
 
 	//calculate bloodAlcohol points
-	var bloodAlcoholPoints = (bloodAlcohol - 0.05)*50;
+	var bloodAlcoholPoints = 0;
+	if (bloodAlcohol !== '') {
+		bloodAlcoholPoints = (bloodAlcohol - 0.05)*50;
+	}
 	console.log("bloodAlcoholPoints:");
 	console.log(bloodAlcoholPoints);
 	
@@ -169,7 +195,10 @@ router.post('/', function(req, res) {
 	console.log(lastMealPoints);
 
 	//calculate cupsOfCoffee points
-	var cupsOfCoffeePoints = cupsOfCoffee - 1;
+	var cupsOfCoffeePoints = 0;
+	if (cupsOfCoffee !== '') {
+		cupsOfCoffeePoints = cupsOfCoffee - 1;	
+	}
 	console.log("cupsOfCoffeePoints:");
 	console.log(cupsOfCoffeePoints);
 
@@ -235,16 +264,19 @@ router.post('/', function(req, res) {
 	console.log(mentalStatePoints);
 
 	//calculate hotClimbersWatching points
-	var hotClimbersWatchingPoints = hotClimbersWatching / 2;
+	var hotClimbersWatchingPoints = 0;
+	if (hotClimbersWatching !== '') {
+		hotClimbersWatchingPoints = hotClimbersWatching / 2;
+	}
 	console.log("hotClimbersWatchingPoints:");
 	console.log(hotClimbersWatchingPoints);
 
 	//calculate TGS Grade
-	tgsGrade = consensusVGrade + heightPoints + weightPoints 
-				+ apeIndexPoints + agePoints + temperaturePoints 
-				+ humidityPoints + seasonPoints + headwindPoints
-				+ sunInEyesPoints + bloodAlcoholPoints + lastMealPoints 
-				+ cupsOfCoffeePoints + climbingAreaPoints + mentalStatePoints;
+	tgsGrade = parseFloat(consensusVGrade) + parseFloat(heightPoints) + parseFloat(weightPoints) 
+				+ parseFloat(apeIndexPoints) + parseFloat(agePoints) + parseFloat(temperaturePoints) 
+				+ parseFloat(humidityPoints) + parseFloat(seasonPoints) + parseFloat(headwindPoints)
+				+ parseFloat(sunInEyesPoints) + parseFloat(bloodAlcoholPoints) + parseFloat(lastMealPoints) 
+				+ parseFloat(cupsOfCoffeePoints) + parseFloat(climbingAreaPoints) + parseFloat(mentalStatePoints);
 
 
 	//send TGS Grade as response
