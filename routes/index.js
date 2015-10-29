@@ -276,6 +276,7 @@ router.post('/', function(req, res) {
 				+ parseFloat(sunInEyesPoints) + parseFloat(bloodAlcoholPoints) + parseFloat(lastMealPoints) 
 				+ parseFloat(cupsOfCoffeePoints) + parseFloat(climbingAreaPoints) + parseFloat(mentalStatePoints);
 
+	tgsGrade = tgsGrade.toFixed(2);
 
 	//send TGS Grade as response
 	res.send({tgsGrade:tgsGrade});
