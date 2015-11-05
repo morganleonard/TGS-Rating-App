@@ -7,7 +7,12 @@ $(document).ready( function () {
 	$("#tabs").tabs();
 
 	//set results window to be closed on page load
-	$("#resultsModal").dialog({ autoOpen: false });
+	$("#resultsModal").dialog({ 
+			autoOpen: false,
+			show: { effect: "blind", duration: 800 },
+			title: "Your TGS Points",
+			width: 500
+		});
 
 	//submit form and pop up lightbox when simple form submit button is hit
 	$('#simpleSubmitButton').click(function (event) {
