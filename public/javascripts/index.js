@@ -9,9 +9,10 @@ $(document).ready( function () {
 	//set results window to be closed on page load
 	$("#resultsModal").dialog({ 
 			autoOpen: false,
-			show: { effect: "blind", duration: 800 },
+			show: { effect: "bounce", duration: 800 },
+			hide: { effect: "puff", duration: 1000 },
 			title: "Your TGS Points",
-			width: 500
+			width: 600
 		});
 
 	//submit form and pop up lightbox when simple form submit button is hit
