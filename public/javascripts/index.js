@@ -105,34 +105,4 @@ $(document).ready( function () {
 
 	})
 
-
-
-
-	// //prevent defualt follow of link to tab, hide and show sections as needed instead
-	// $('#simpleSprayLink').click(function (event) {
-	// 	event.preventDefault();
-	// 	//hide and show form sections as needed
-	// 	$("#personalDataSection").show();
-	// 	$("#environmentalDataSection").hide();
-	// 	$("#metaphysicalDataSection").hide();
-	// })
-
-	// //prevent defualt follow of link to tab, hide and show sections as needed instead
-	// $('#standardSprayLink').click(function (event) {
-	// 	event.preventDefault();
-	// 	//hide and show form sections as needed
-	// 	$("#personalDataSection").show();
-	// 	$("#environmentalDataSection").show();
-	// 	$("#metaphysicalDataSection").hide();
-	// })
-
-	// //prevent defualt follow of link to tab, hide and show sections as needed instead
-	// $('#superSprayLink').click(function (event) {
-	// 	event.preventDefault();
-	// 	//hide and show form sections as needed
-	// 	$("#personalDataSection").show();
-	// 	$("#environmentalDataSection").show();
-	// 	$("#metaphysicalDataSection").show();
-	// })
-
 })

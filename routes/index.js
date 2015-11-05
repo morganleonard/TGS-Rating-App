@@ -16,25 +16,6 @@ router.post('/', function(req, res) {
 	
 	//get input values from form and capture in variables
 
-	// var consensusVGrade = req.body.consensusVGrade,
-	// 	heightFeet = req.body.heightFeet,
-	// 	heightInches = req.body.heightInches,
-	// 	weight = req.body.weight,
-	// 	apeIndex = req.body.apeIndex,
-	// 	age = req.body.age,
-	// 	temperature = req.body.temperature,
-	// 	humidity = req.body.humidity,
-	// 	season = req.body.season,
-	// 	headwind = req.body.headwind,
-	// 	sunInEyes = req.body.sunInEyes,
-	// 	bloodAlcohol = req.body.bloodAlcohol,
-	// 	lastMeal = req.body.lastMeal,
-	// 	cupsOfCoffee = req.body.cupsOfCoffee,		
-	// 	climbingArea = req.body.climbingArea,
-	// 	mentalState = req.body.mentalState,
-	// 	hotClimbersWatching = req.body.hotClimbersWatching,		
-	// 	tgsGrade = 0;
-
 	//initialize variables to input from submitted form if it exists, 0 otherwise
 	var consensusVGrade = req.body.consensusVGrade ? req.body.consensusVGrade : '';
 	var heightFeet = req.body.heightFeet ? req.body.heightFeet : '';
