@@ -6,6 +6,16 @@ $(document).ready( function () {
 	//enable jQuery UI tabs
 	$("#tabs").tabs();
 
+	//set welcome message window to be open on page load
+	$("#welcomeModal").dialog({ 
+			autoOpen: true,
+			show: { effect: "bounce", duration: 800 },
+			hide: { effect: "puff", duration: 1000 },
+			title: "Yo, Bro!",
+			width: 600
+		});
+
+
 	//set results window to be closed on page load
 	$("#resultsModal").dialog({ 
 			autoOpen: false,
