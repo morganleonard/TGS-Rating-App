@@ -9,10 +9,18 @@ $(document).ready( function () {
 	//set welcome message window to be open on page load
 	$("#welcomeModal").dialog({ 
 			autoOpen: true,
-			show: { effect: "bounce", duration: 800 },
-			hide: { effect: "puff", duration: 1000 },
-			title: "Yo, Bro!",
-			width: 600
+			show: { effect: "size", duration: 500 },
+			hide: { effect: "fade", duration: 500 },
+			title: "Check yo'self!",
+			width: 600,
+			buttons: [
+    			{
+      				text: "Got It",
+      				click: function() {
+        				$(this).dialog("close");
+     			 	}
+    			}
+  			]
 		});
 
 
