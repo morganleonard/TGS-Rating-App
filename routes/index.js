@@ -16,33 +16,57 @@ router.post('/', function(req, res) {
 	
 	//get input values from form and capture in variables
 
-	//initialize variables to input from submitted form if it exists, 0 otherwise
-	var consensusVGrade = req.body.consensusVGrade ? req.body.consensusVGrade : '';
-	var heightFeet = req.body.heightFeet ? req.body.heightFeet : '';
-	var heightInches = req.body.heightInches ? req.body.heightInches : '';
-	var weight = req.body.weight ? req.body.weight : '';
-	var apeIndex = req.body.apeIndex ? req.body.apeIndex : '';
-	var age = req.body.age ? req.body.age : '';
-	var temperature = req.body.temperature ? req.body.temperature : '';
-	var humidity = req.body.humidity ? req.body.humidity : '';
-	var season = req.body.season ? req.body.season : '';
-	var headwind = req.body.headwind ? req.body.headwind : '';
-	var sunInEyes = req.body.sunInEyes ? req.body.sunInEyes : '';
-	var bloodAlcohol = req.body.bloodAlcohol ? req.body.bloodAlcohol : '';
-	var lastMeal = req.body.lastMeal ? req.body.lastMeal : '';
-	var cupsOfCoffee = req.body.cupsOfCoffee ? req.body.cupsOfCoffee : '';
-	var climbingArea = req.body.climbingArea ? req.body.climbingArea : '';
-	var mentalState = req.body.mentalState ? req.body.mentalState : '';
-	var hotClimbersWatching = req.body.hotClimbersWatching ? req.body.hotClimbersWatching : '';
-	var tgsGrade = 0;
+	// //initialize variables to input from submitted form if it exists, empty string otherwise
+	// var consensusVGrade = req.body.consensusVGrade ? req.body.consensusVGrade : '';
+	// var heightFeet = req.body.heightFeet ? req.body.heightFeet : '';
+	// var heightInches = req.body.heightInches ? req.body.heightInches : '';
+	// var weight = req.body.weight ? req.body.weight : '';
+	// var apeIndex = req.body.apeIndex ? req.body.apeIndex : '';
+	// var age = req.body.age ? req.body.age : '';
+	// var temperature = req.body.temperature ? req.body.temperature : '';
+	// var humidity = req.body.humidity ? req.body.humidity : '';
+	// var season = req.body.season ? req.body.season : '';
+	// var headwind = req.body.headwind ? req.body.headwind : '';
+	// var sunInEyes = req.body.sunInEyes ? req.body.sunInEyes : '';
+	// var bloodAlcohol = req.body.bloodAlcohol ? req.body.bloodAlcohol : '';
+	// var lastMeal = req.body.lastMeal ? req.body.lastMeal : '';
+	// var cupsOfCoffee = req.body.cupsOfCoffee ? req.body.cupsOfCoffee : '';
+	// var climbingArea = req.body.climbingArea ? req.body.climbingArea : '';
+	// var mentalState = req.body.mentalState ? req.body.mentalState : '';
+	// var hotClimbersWatching = req.body.hotClimbersWatching ? req.body.hotClimbersWatching : '';
+	// var tgsGrade = 0;
+
+	// initialize input data object members to input from submitted form if it exists, empty string otherwise
+	var	tgsGrade = 0;
+
+	var inputData = {
+		consensusVGrade : (req.body.consensusVGrade ? req.body.consensusVGrade : ''),
+		heightFeet : (req.body.heightFeet ? req.body.heightFeet : ''),
+		heightInches : (req.body.heightInches ? req.body.heightInches : ''),
+		weight : (req.body.weight ? req.body.weight : ''),
+		apeIndex : (req.body.apeIndex ? req.body.apeIndex : ''),
+		age : (req.body.age ? req.body.age : ''),
+		temperature : (req.body.temperature ? req.body.temperature : ''),
+		humidity : (req.body.humidity ? req.body.humidity : ''),
+		season : (req.body.season ? req.body.season : ''),
+		headwind : (req.body.headwind ? req.body.headwind : ''),
+		sunInEyes : (req.body.sunInEyes ? req.body.sunInEyes : ''),
+		bloodAlcohol : (req.body.bloodAlcohol ? req.body.bloodAlcohol : ''),
+		lastMeal : (req.body.lastMeal ? req.body.lastMeal : ''),
+		cupsOfCoffee : (req.body.cupsOfCoffee ? req.body.cupsOfCoffee : ''),
+		climbingArea : (req.body.climbingArea ? req.body.climbingArea : ''),
+		mentalState : (req.body.mentalState ? req.body.mentalState : ''),
+		hotClimbersWatching : (req.body.hotClimbersWatching ? req.body.hotClimbersWatching : ''),
+	};
+
 
 	console.log('calculating points...')
 
 	//calculate height points
 	var heightPoints = 0,
 		heightTotal;
-	if (heightFeet && heightInches !== '') {
-		heightTotal = (parseFloat(heightFeet) * 12) + parseFloat(heightInches);
+	if (inputData.heightFeet && inputData.heightInches !== '') {
+		heightTotal = (parseFloat(inputData.heightFeet) * 12) + parseFloat(inputData.heightInches);
 		heightPoints = (68 - heightTotal) / 5;
 	}	
 	console.log("heightPoints:");
@@ -50,56 +74,56 @@ router.post('/', function(req, res) {
 
 	//calculate weight points
 	var weightPoints = 0;
-	if (weight !== '') {
-		weightPoints = (weight - 160) / 20;
+	if (inputData.weight !== '') {
+		weightPoints = (inputData.weight - 160) / 20;
 	}
 	console.log("weightPoints:");
 	console.log(weightPoints);
 
 	//calculate apeIndex points
 	var apeIndexPoints = 0;
-	if (apeIndex !== '') {
-		apeIndexPoints = 0 - apeIndex;
+	if (inputData.apeIndex !== '') {
+		apeIndexPoints = 0 - inputData.apeIndex;
 	}
 	console.log("apeIndexPoints:");
 	console.log(apeIndexPoints);
 
 	//calculate age points
 	var agePoints = 0;
-	if (age !== '') {
-		agePoints = (age - 30) / 10;
+	if (inputData.age !== '') {
+		agePoints = (inputData.age - 30) / 10;
 	}
 	console.log("agePoints:");
 	console.log(agePoints);
 	
 	//calculate temperature points
 	var temperaturePoints = 0;
-	if (temperature !== '') {
-		temperaturePoints = (temperature - 45)/20;
+	if (inputData.temperature !== '') {
+		temperaturePoints = (inputData.temperature - 45)/20;
 	}
 	console.log("temperaturePoints:");
 	console.log(temperaturePoints);
 
 	//calculate humidity points
 	var humidityPoints = 0;
-	if (humidity !== '') {
-		var humidityPoints = humidity / 20;
+	if (inputData.humidity !== '') {
+		var humidityPoints = inputData.humidity / 20;
 	}
 	console.log("humidityPoints:");
 	console.log(humidityPoints);
 
 	//calculate season points
 	var seasonPoints = 0;
-	if (season === "Summer") {
+	if (inputData.season === "Summer") {
 		seasonPoints = 1;
 	}
-	if (season === "Fall") {
+	if (inputData.season === "Fall") {
 		seasonPoints = -1;
 	}
-	if (season === "Spring") {
+	if (inputData.season === "Spring") {
 		seasonPoints = 0;
 	}
-	if (season === "Winter") {
+	if (inputData.season === "Winter") {
 		seasonPoints = -0.5;
 	}
 	console.log("seasonPoints:");
@@ -107,67 +131,67 @@ router.post('/', function(req, res) {
 
 	//calculate headwind points
 	var headwindPoints = 0;
-	if (headwind !== '') {
-		headwindPoints = headwind / 30;
+	if (inputData.headwind !== '') {
+		headwindPoints = inputData.headwind / 30;
 	}
 	console.log("headwindPoints:");
 	console.log(headwindPoints);
 
 	//calculate sunInEyes points
 	var sunInEyesPoints = 0;
-	if (sunInEyes !== '') {
-		sunInEyesPoints = sunInEyes / 30;
+	if (inputData.sunInEyes !== '') {
+		sunInEyesPoints = inputData.sunInEyes / 30;
 	}
 	console.log("sunInEyesPoints:");
 	console.log(sunInEyesPoints);
 
 	//calculate bloodAlcohol points
 	var bloodAlcoholPoints = 0;
-	if (bloodAlcohol !== '') {
-		bloodAlcoholPoints = (bloodAlcohol - 0.05)*50;
+	if (inputData.bloodAlcohol !== '') {
+		bloodAlcoholPoints = (inputData.bloodAlcohol - 0.05)*50;
 	}
 	console.log("bloodAlcoholPoints:");
 	console.log(bloodAlcoholPoints);
 	
 	//calculate lastMeal points
 	var lastMealPoints = 0;
-	if (lastMeal === "mexican") {
+	if (inputData.lastMeal === "mexican") {
 		lastMealPoints = 1;
 	}
-	if (lastMeal === "italian") {
+	if (inputData.lastMeal === "italian") {
 		lastMealPoints = 0;
 	}
-	if (lastMeal === "thai") {
+	if (inputData.lastMeal === "thai") {
 		lastMealPoints = -0.5;
 	}
-	if (lastMeal === "indian") {
+	if (inputData.lastMeal === "indian") {
 		lastMealPoints = -0.5;
 	}
-	if (lastMeal === "salad") {
+	if (inputData.lastMeal === "salad") {
 		lastMealPoints = -1;
 	}
-	if (lastMeal === "pizza") {
+	if (inputData.lastMeal === "pizza") {
 		lastMealPoints = 0;
 	}
-	if (lastMeal === "burger") {
+	if (inputData.lastMeal === "burger") {
 		lastMealPoints = 0;
 	}
-	if (lastMeal === "kale") {
+	if (inputData.lastMeal === "kale") {
 		lastMealPoints = -2;
 	}
-	if (lastMeal === "beer") {
+	if (inputData.lastMeal === "beer") {
 		lastMealPoints = 0.5;
 	}
-	if (lastMeal === "whiskey") {
+	if (inputData.lastMeal === "whiskey") {
 		lastMealPoints = 1;
 	}
-	if (lastMeal === "cornDog") {
+	if (inputData.lastMeal === "cornDog") {
 		lastMealPoints = 0.5;
 	}
-	if (lastMeal === "pepperoni") {
+	if (inputData.lastMeal === "pepperoni") {
 		lastMealPoints = 0;
 	}
-	if (lastMeal === "cigarette") {
+	if (inputData.lastMeal === "cigarette") {
 		lastMealPoints = -1;
 	}
 	console.log("lastMealPoints:");
@@ -175,48 +199,48 @@ router.post('/', function(req, res) {
 
 	//calculate cupsOfCoffee points
 	var cupsOfCoffeePoints = 0;
-	if (cupsOfCoffee !== '') {
-		cupsOfCoffeePoints = cupsOfCoffee - 1;	
+	if (inputData.cupsOfCoffee !== '') {
+		cupsOfCoffeePoints = inputData.cupsOfCoffee - 1;	
 	}
 	console.log("cupsOfCoffeePoints:");
 	console.log(cupsOfCoffeePoints);
 
 	//calculate climbingArea points
 	var climbingAreaPoints = 0;
-	if (climbingArea === "hueco") {
+	if (inputData.climbingArea === "hueco") {
 		climbingAreaPoints = 0;
 	}
-	if (climbingArea === "bishop") {
+	if (inputData.climbingArea === "bishop") {
 		climbingAreaPoints = -1;
 	}
-	if (climbingArea === "joesvalley") {
+	if (inputData.climbingArea === "joesvalley") {
 		climbingAreaPoints = -2;
 	}
-	if (climbingArea === "leavenworth") {
+	if (inputData.climbingArea === "leavenworth") {
 		climbingAreaPoints = 0.5;
 	}
-	if (climbingArea === "squamish") {
+	if (inputData.climbingArea === "squamish") {
 		climbingAreaPoints = 1;
 	}
-	if (climbingArea === "carver") {
+	if (inputData.climbingArea === "carver") {
 		climbingAreaPoints = 0;
 	}
-	if (climbingArea === "littleCottonwood") {
+	if (inputData.climbingArea === "littleCottonwood") {
 		climbingAreaPoints = 1.5;
 	}
-	if (climbingArea === "moesValley") {
+	if (inputData.climbingArea === "moesValley") {
 		climbingAreaPoints = -2;
 	}
-	if (climbingArea === "fontainebleau") {
+	if (inputData.climbingArea === "fontainebleau") {
 		climbingAreaPoints = 1;
 	}
-	if (climbingArea === "myLocalArea") {
+	if (inputData.climbingArea === "myLocalArea") {
 		climbingAreaPoints = -1;
 	}
-	if (climbingArea === "anywhereInColorado") {
+	if (inputData.climbingArea === "anywhereInColorado") {
 		climbingAreaPoints = -1.5;
 	}
-	if (climbingArea === "other") {
+	if (inputData.climbingArea === "other") {
 		climbingAreaPoints = 0;
 	}			
 	console.log("climbingAreaPoints:");
@@ -224,19 +248,19 @@ router.post('/', function(req, res) {
 
 	//calculate mentalState points
 	var mentalStatePoints = 0;
-	if (mentalState === "distracted") {
+	if (inputData.mentalState === "distracted") {
 		mentalStatePoints = 0.5;
 	}
-	if (mentalState === "focused") {
+	if (inputData.mentalState === "focused") {
 		mentalStatePoints = -0.5;
 	}
-	if (mentalState === "spaceCadet") {
+	if (inputData.mentalState === "spaceCadet") {
 		mentalStatePoints = 0;
 	}
-	if (mentalState === "psyched") {
+	if (inputData.mentalState === "psyched") {
 		mentalStatePoints = -0.5;
 	}
-	if (mentalState === "hungover") {
+	if (inputData.mentalState === "hungover") {
 		mentalStatePoints = 1;
 	}
 	console.log("mentalStatePoints:");
@@ -244,8 +268,8 @@ router.post('/', function(req, res) {
 
 	//calculate hotClimbersWatching points
 	var hotClimbersWatchingPoints = 0;
-	if (hotClimbersWatching !== '') {
-		hotClimbersWatchingPoints = hotClimbersWatching / 2;
+	if (inputData.hotClimbersWatching !== '') {
+		hotClimbersWatchingPoints = inputData.hotClimbersWatching / 2;
 	}
 	console.log("hotClimbersWatchingPoints:");
 	console.log(hotClimbersWatchingPoints);
@@ -258,6 +282,9 @@ router.post('/', function(req, res) {
 				+ parseFloat(cupsOfCoffeePoints) + parseFloat(climbingAreaPoints) + parseFloat(mentalStatePoints);
 
 	tgsGrade = tgsGrade.toFixed(2);
+
+	console.log("tgsGrade");
+	console.log(tgsGrade);
 
 	//send TGS Grade as response
 	res.send({tgsGrade:tgsGrade});

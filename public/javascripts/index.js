@@ -44,6 +44,7 @@ $(document).ready( function () {
 
 		//get data from from
 		var formData = $('#simpleForm').serialize();
+		console.log("formData");
 		console.log(formData);
 
 		//send data via ajax to server
@@ -127,7 +128,7 @@ $(document).ready( function () {
 
 		console.log("In detailedResultsButton click handler")
 
-		
+
 	})
 
 })
