@@ -123,4 +123,11 @@ $(document).ready( function () {
 
 	})
 
+	$('#detailedResultsButton').click(function (event) {
+
+		console.log("In detailedResultsButton click handler")
+
+		
+	})
+
 })
